@@ -27,3 +27,12 @@ header{
   height: 100%;
   width: 90%;
 }
+
+#thanos:hover{
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.character {
+  transition-duration: 1s;
+}
