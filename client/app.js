@@ -14,10 +14,17 @@ function getCharacterData(){
   });
 }
 
+const hiddenCharacters = {
+  1009652 : true,
+  1009165: true,
+  1009726: true,
+  1009299: true
+}
+
 function addCharactersToPage(characterData){
   //console.log(characterData.data.results);
   characterData.data.results.forEach(result => {
-    if(result.id != 1009652){
+    if(!hiddenCharacters[result.id]){
       //console.log(result.thumbnail.path + '/standard_medium.jpg');
       const characterImage = result.thumbnail.path + '/standard_medium.jpg';
       const characterElemnt = document.createElement('div');
@@ -35,7 +42,6 @@ function addCharactersToPage(characterData){
 
       charactersElemnt.appendChild(characterElemnt);
     }
-    
   });
 }
 

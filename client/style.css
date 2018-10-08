@@ -18,10 +18,12 @@ header{
 }
 
 .characters{
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 100px);
+  grid-column-gap: 16px;
+  /*flex-wrap: wrap;
+  justify-content: space-around;*/
   height: 100%;
   width: 90%;
 }
