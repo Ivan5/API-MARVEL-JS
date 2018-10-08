@@ -36,3 +36,7 @@ header{
 .character {
   transition-duration: 1s;
 }
+
+#balance{
+  transition-duration:  2s;
+}

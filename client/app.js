@@ -1,7 +1,11 @@
 const charactersElemnt = document.querySelector('.characters');
 const thanosElement = document.querySelector('#thanos');
+const theTruth = document.querySelector("#balance");
+
 
 const charactersURL = 'https://gateway.marvel.com:443/v1/public/events/29/characters?limit=100&apikey=63536fc3fd34892b6fc1c44c5ca69989';
+
+theTruth.style.opacity = '0';
 
 function getCharacterData(){
   if(localStorage.characterData){
@@ -81,8 +85,8 @@ function kill(characters, leftToDie){
     }, 1000)
   }else{
     document.querySelectorAll('.dead').forEach(character => {
-      character.style.height = '0px';
-      character.style.width = '0px';
+      charactersElemnt.removeChild(character);
     });
+    theTruth.style.opacity = '1';
   }
 }
