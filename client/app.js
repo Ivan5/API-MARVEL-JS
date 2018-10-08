@@ -1,3 +1,5 @@
+const charactersElemnt = document.querySelector('.characters');
+
 const charactersURL = 'https://gateway.marvel.com:443/v1/public/events/29/characters?limit=100&apikey=63536fc3fd34892b6fc1c44c5ca69989';
 
 function getCharacterData(){
@@ -15,8 +17,25 @@ function getCharacterData(){
 function addCharactersToPage(characterData){
   //console.log(characterData.data.results);
   characterData.data.results.forEach(result => {
-    console.log(result.thumbnail.path + '/standard_medium.jpg');
-    const characterImage = result.thumbnail.path + '/standard_medium.jpg';
+    if(result.id != 1009652){
+      //console.log(result.thumbnail.path + '/standard_medium.jpg');
+      const characterImage = result.thumbnail.path + '/standard_medium.jpg';
+      const characterElemnt = document.createElement('div');
+
+      const imageElement = document.createElement('img');
+      imageElement.src = characterImage;
+
+      characterElemnt.appendChild(imageElement);
+
+      const characterName = result.name.replace(/\(.*\)/, '');
+      const characterNameElement = document.createElement('h3');
+      characterNameElement.textContent = characterName;
+
+      characterElemnt.appendChild(characterNameElement);
+
+      charactersElemnt.appendChild(characterElemnt);
+    }
+    
   });
 }
 

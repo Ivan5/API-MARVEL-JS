@@ -2,9 +2,26 @@ body{
   background-color: black;
   margin: 0;
   padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header{
   text-align: center;
   margin-top: 20px;
+}
+
+.characters{
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 100%;
+  width: 90%;
 }
